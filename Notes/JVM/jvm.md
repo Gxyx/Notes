@@ -4,7 +4,7 @@
 
 JVM 是运行在操作系统之上的，它与硬件没有直接交互
 
-![1](C:\Users\13294\Desktop\笔记\JVM\images\1.png)
+![image](https://user-images.githubusercontent.com/50070756/125548156-e893b0a3-c8d7-45d5-a313-3b7e8638cf22.png)
 
 ### 作用
 
