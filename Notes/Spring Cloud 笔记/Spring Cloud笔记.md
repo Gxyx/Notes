@@ -2,7 +2,7 @@
 
 ## 1、微服务架构编码 构建
 
-<img src="C:\Users\13294\Desktop\Spring Cloud 笔记\images\cloud.jpeg" style="zoom:80%;" />
+![image](https://user-images.githubusercontent.com/50070756/125549363-0f8a4bcf-5bf4-471c-8c42-a1a1c2836215.png)
 
  ==约定>配置>编码==
 
@@ -23,7 +23,7 @@
   者)，以该别名的方式去注册中心上获取到实际的服务通讯地址，然后再实现本地RPC调用RPC远程调用框架核心设计思想:在于注册中心，因为使用注册中心管理每个服务与
   服务之间的一个依赖关系(服务治理概念)。在任何rpc远程框架中，都会有一个注册中心(存放服务地址相关信息(接口地址)
 
-<img src="C:\Users\13294\Desktop\Spring Cloud 笔记\images\Eureka.png" style="zoom:80%;" />
+![image](https://user-images.githubusercontent.com/50070756/125549390-99c7e0d3-2447-4d57-953c-4787ccb18c54.png)
 
 ##### Eureka两组件
 
@@ -151,7 +151,7 @@ Eureka包含两个组件:==Eureka Server==和==Eureka Client==
 
 6. 测试界面
 
-   ![](C:\Users\13294\Desktop\Spring Cloud 笔记\images\sever7001.png)
+   ![image](https://user-images.githubusercontent.com/50070756/125549328-efd7e54f-6313-468c-bcaf-4133c6e1eb52.png)
 
 * No application available没有服务被发现  因为没有注册服务进来当前不可能有服务被发现
 
@@ -294,19 +294,19 @@ Eureka包含两个组件:==Eureka Server==和==Eureka Client==
 
 ​       **注册名启动配置说明**
 
-<img src="C:\Users\13294\Desktop\Spring Cloud 笔记\images\注册名配置.png" style="zoom:80%;" />
+![image](https://user-images.githubusercontent.com/50070756/125549428-d3253ca0-ea78-45c5-a639-6d7627b168ac.png)
 
 ​     **自我保护机制**
 
 
 
-<img src="C:\Users\13294\Desktop\Spring Cloud 笔记\images\自我保护机制.png" style="zoom:80%;" />
+![image](https://user-images.githubusercontent.com/50070756/125549546-7e82667e-69ca-474b-b898-b5dcce6d9755.png)
 
 ### 3、Euekar集群搭建
 
 ##### Eureka集群原理说明
 
-![](C:\Users\13294\Desktop\Spring Cloud 笔记\images\集群.png)==解决办法==：<font color="#FF0000" > 搭建Eureka注册中心集群,实现负载均衡+故障容错</font>
+![image](https://user-images.githubusercontent.com/50070756/125549699-b13e691e-42c9-436d-8f0f-f23a59a8f2d4.png)==解决办法==：<font color="#FF0000" > 搭建Eureka注册中心集群,实现负载均衡+故障容错</font>
 
 ##### 负载均衡
 
@@ -361,7 +361,7 @@ Eureka包含两个组件:==Eureka Server==和==Eureka Client==
   服务本身其实是健康的，此时本不应该注销这个微服务。Eureka通过“自我保护模式”来解决这个问题——当EurekaServer节点在
   短时间内丢失过多客户端时(可能发生了网络分区故障)，那么这个节点就会进入自我保护模式。
 
-  <img src="C:\Users\13294\Desktop\Spring Cloud 笔记\images\自我保护机制.png" style="zoom:80%;" />
+![image](https://user-images.githubusercontent.com/50070756/125549553-19f95d14-b064-4946-b12c-7d3866b56127.png)
 
 * 它的设计哲学就是宁可保留错误的服务注册信息，也不盲自注销任何可能健康的服务实例。—句话讲解∶好死不如赖活着
   综上，自我保护模式是一种应对网络异常的安全保护措施。它的架构哲学是宁可同时保留所有微服务（健康的微服务和不健康的微服
@@ -641,7 +641,7 @@ Eureka包含两个组件:==Eureka Server==和==Eureka Client==
 
 ##### 经典CAP图
 
-​	<img src="C:\Users\13294\Desktop\Spring Cloud 笔记\images\CAP.png" style="zoom:80%;" />
+​	![image](https://user-images.githubusercontent.com/50070756/125549762-a4d06cfe-e686-43ac-9f96-94e8a9a30a8a.png)
 
 * <font color="#FF0000" >最多只能同时较好的满足两个。</font>
   CAP理论的核心是:<font color="#FF0000" >一个分布式系统不可能同时很好的满足一致性，可用性和分区容错性这三个需求，</font>
@@ -652,7 +652,7 @@ Eureka包含两个组件:==Eureka Server==和==Eureka Client==
 
 ##### AP(eureka)
 
-​			<img src="C:\Users\13294\Desktop\Spring Cloud 笔记\images\AP.png" style="zoom:80%;" />
+​			![image](https://user-images.githubusercontent.com/50070756/125549787-b38e1b4d-fe1c-4e65-9f26-d685d2e22b4b.png)
 
 ##### CP(Zookeeper/Consul)
 
@@ -660,7 +660,7 @@ Eureka包含两个组件:==Eureka Server==和==Eureka Client==
   当网络分区出现后,为了保证一致性,就必须拒绝请求,否则无法保证一致性
   <font color="#FF0000" >结论:违背了可用性A的要求,只满足一致性和分区容错,即CP</font>
 
-​			<img src="C:\Users\13294\Desktop\Spring Cloud 笔记\images\cp.png" style="zoom:80%;" />
+​			![image](https://user-images.githubusercontent.com/50070756/125549809-f282ef8c-7c5b-4cf7-95b4-27db4b06d6fb.png)
 
 ## 4、Ribbon负载均衡调用
 
@@ -692,7 +692,7 @@ Eureka包含两个组件:==Eureka Server==和==Eureka Client==
 
 ### 2、架构说明
 
-​				<img src="C:\Users\13294\Desktop\Spring Cloud 笔记\images\Ribbon.png" style="zoom:80%;" />
+​				![image](https://user-images.githubusercontent.com/50070756/125549837-74601f03-1f1c-4578-91f7-47c386c45c0a.png)
 
 * Ribbon在工作时分成两步
   第一步先选择EurekaServer ,它优先选择在同一个区域内负载较少的server.
